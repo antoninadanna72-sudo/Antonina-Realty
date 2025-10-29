@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Antonina Realty — Trusted. Local. Proven.</title>
+  <meta name="description" content="Antonina Realty — Serving Port Chester & Surrounding Communities. Trusted. Local. Proven.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#0f6fff;        /* Coldwell Banker blue vibe */
+      --teal:#0fbfcf;         /* Teal accent for tables/CTA */
+      --ink:#0f172a;          /* slate-900 */
+      --muted:#475569;        /* slate-600 */
+      --bg:#ffffff;
+      --card:#ffffff;
+      --ring: rgba(0,0,0,0.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}
+    a{color:inherit}
+    .container{max-width:1120px;margin:0 auto;padding:0 16px}
+    header.sticky{position:sticky;top:0;z-index:40;background:rgba(255,255,255,0.8);backdrop-filter:blur(8px);border-bottom:1px solid #e5e7eb}
+    .row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:36px;height:36px;border-radius:12px;background:var(--brand);display:grid;place-items:center;color:#fff;font-weight:800}
+    nav a{font-size:14px;margin:0 10px;text-decoration:none;opacity:.9}
+    nav a:hover{opacity:1}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;border:1px solid transparent;background:var(--brand);color:#fff;font-weight:600;text-decoration:none;box-shadow:0 6px 14px -6px rgba(0,0,0,.25)}
+    .btn.alt{background:transparent;color:#111;border-color:#e5e7eb}
+    .hero{position:relative;overflow:hidden}
+    .hero-grad{position:absolute;inset:0;background:linear-gradient(135deg,var(--brand),var(--teal));z-index:-1}
+    .hero .container{padding:64px 16px 80px}
+    .chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;padding:8px 12px;border-radius:999px;font-size:13px}
+    h1{font-size:40px;line-height:1.1;margin:16px 0 8px;color:#fff}
+    .hero p{color:#f8fafc;max-width:680px;font-size:18px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .hero .btn{background:#fff;color:#111}
+    .hero .btn.secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+    .tagline{color:#eef2ff;opacity:.9;font-size:14px;margin-top:8px}
+    section{padding:56px 0}
+    h2{font-size:28px;margin:0}
+    .grid{display:grid;gap:16px}
+    @media(min-width:768px){.grid-3{grid-template-columns:repeat(3,1fr)}.grid-2{grid-template-columns:repeat(2,1fr)}}
+    .card{background:var(--card);border:1px solid #e5e7eb;border-radius:18px;overflow:hidden;box-shadow:0 10px 20px -12px var(--ring)}
+    .card .body{padding:14px 16px 16px}
+    .listing-img{width:100%;height:180px;object-fit:cover;background:#e2e8f0}
+    .price{font-size:22px;font-weight:800;margin-top:4px}
+    .muted{color:var(--muted);font-size:14px}
+    .table-wrap{border-radius:18px;overflow:hidden;box-shadow:0 10px 20px -12px var(--ring)}
+    table{width:100%;border-collapse:collapse}
+    thead{background:var(--teal);color:#fff}
+    th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #f1f5f9}
+    tbody tr:nth-child(even){background:#f8fafc}
+    .disclaimer{font-size:12px;color:#64748b;margin-top:8px}
+    .pill{display:inline-flex;padding:6px 10px;border:1px solid #e2e8f0;border-radius:999px;background:#f8fafc;font-size:12px;margin:4px 6px 0 0}
+    .cta{border:1px solid var(--teal);border-radius:18px;padding:20px;background:#fff;box-shadow:0 12px 24px -18px var(--ring)}
+    .cta form{display:grid;gap:10px;grid-template-columns:1fr;max-width:520px}
+    .cta input,.cta button,.field{padding:12px 14px;border-radius:12px;border:1px solid #e5e7eb;font-size:14px}
+    .cta button{background:var(--teal);color:#fff;font-weight:700;border:none}
+    .contact-grid{display:grid;gap:18px}
+    @media(min-width:768px){.contact-grid{grid-template-columns:1fr 1fr}}
+    footer{border-top:1px solid #e5e7eb;padding:28px 0;color:#334155}
+    .small{font-size:12px;color:#64748b}
+    .ok{color:#16a34a;font-weight:700}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+  <header class="sticky">
+    <div class="container row">
+      <div class="brand">
+        <div class="logo">AR</div>
+        <div>
+          <div style="font-weight:700">Antonina Realty</div>
+          <div class="small">Coldwell Banker Realty — Rye Sound Shore</div>
+        </div>
+      </div>
+      <nav class="hide-mobile">
+        <a href="#listings">Listings</a>
+        <a href="#market">Market Snapshot</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="hide-mobile">
+        <a class="btn" href="#home-value">Get Home Value</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-grad"></div>
+    <div class="container">
+      <div class="chip">🏠 Trusted. Local. Proven.</div>
+      <h1>Your Port Chester real estate partner</h1>
+      <p>Helping sellers and buyers across Port Chester, Rye Brook, White Plains, and Westchester County with clear guidance, sharp marketing, and steady negotiation.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#listings">See Listings</a>
+        <a class="btn secondary" href="#contact">Book a consult</a>
+      </div>
+      <div class="tagline">Serving Port Chester & Surrounding Communities</div>
+    </div>
+  </section>
+
+  <section id="listings">
+    <div class="container">
+      <div class="row">
+        <h2>Featured Listings</h2>
+        <a href="#contact" class="small">Want your home featured?</a>
+      </div>
+      <div class="grid grid-3" style="margin-top:16px">
+        <div class="card">
+          <img class="listing-img" src="https://placehold.co/800x520?text=Featured+Listing" alt="Listing 1"/>
+          <div class="body">
+            <div style="font-weight:700">17 Edgar Place, Port Chester, NY 10573</div>
+            <div class="price">$530,000</div>
+            <div class="muted">2 BR • 1 BA • Active</div>
+            <div style="margin-top:10px"><a class="btn" href="#contact">Request a showing</a></div>
+          </div>
+        </div>
+        <div class="card">
+          <img class="listing-img" src="https://placehold.co/800x520?text=Featured+Listing" alt="Listing 2"/>
+          <div class="body">
+            <div style="font-weight:700">29 Clermont Avenue, Port Chester, NY 10573</div>
+            <div class="price">$598,000</div>
+            <div class="muted">4 BR • 2 BA • Active</div>
+            <div style="margin-top:10px"><a class="btn" href="#contact">Request a showing</a></div>
+          </div>
+        </div>
+        <div class="card">
+          <img class="listing-img" src="https://placehold.co/800x520?text=Featured+Listing" alt="Listing 3"/>
+          <div class="body">
+            <div style="font-weight:700">82 Shelley Avenue, Port Chester, NY 10573</div>
+            <div class="price">$649,000</div>
+            <div class="muted">3 BR • 1.5 BA • Active</div>
+            <div style="margin-top:10px"><a class="btn" href="#contact">Request a showing</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="market">
+    <div class="container">
+      <div class="row">
+        <h2>Active Single‑Family Homes in Port Chester</h2>
+        <a href="#contact" class="small">Send me the full list</a>
+      </div>
+      <div class="table-wrap" style="margin-top:16px">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Address</th><th>Beds</th><th>Baths</th><th>Price</th></tr>
+          </thead>
+          <tbody id="market-rows">
+            <tr><td>1</td><td>17 Edgar Place</td><td>2</td><td>1</td><td>$530,000</td></tr>
+            <tr><td>2</td><td>29 Clermont Avenue</td><td>4</td><td>2</td><td>$598,000</td></tr>
+            <tr><td>3</td><td>82 Shelley Avenue</td><td>3</td><td>1.5</td><td>$649,000</td></tr>
+            <tr><td>4</td><td>263 N Regent Street</td><td>4</td><td>2.5</td><td>$649,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="disclaimer">Data deemed reliable but not guaranteed. Not intended to solicit homeowners currently under contract with another broker.</div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2>How I help</h2>
+      <div class="grid grid-3" style="margin-top:16px">
+        <div class="card"><div class="body">
+          <div style="font-weight:600">Full‑service Listing Marketing</div>
+          <div class="muted" style="margin-top:6px">Pro photography, video, targeted social ads, and postcard campaigns aligned to Coldwell Banker brand standards.</div>
+        </div></div>
+        <div class="card"><div class="body">
+          <div style="font-weight:600">Offer Strategy &amp; Negotiation</div>
+          <div class="muted" style="margin-top:6px">Clear comps, pricing guidance, and steady advocacy from offer through closing.</div>
+        </div></div>
+        <div class="card"><div class="body">
+          <div style="font-weight:600">Local Expertise</div>
+          <div class="muted" style="margin-top:6px">Port Chester &amp; Westchester market insight you can act on—streets, schools, and timing that matter.</div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="home-value">
+    <div class="container">
+      <div class="cta">
+        <div class="grid grid-2" style="align-items:center">
+          <div>
+            <h3 style="margin:0;font-size:22px">Curious what your home could sell for?</h3>
+            <p class="muted" style="margin:8px 0 14px">Get a free, no‑pressure home value estimate tailored to your property and street.</p>
+            <form id="value-form">
+              <input id="addr" type="text" placeholder="Street address" required/>
+              <button type="submit">Get estimate</button>
+              <div id="value-msg" class="small ok hidden">Thanks! I’ll follow up today.</div>
+            </form>
+          </div>
+          <div>
+            <div class="small" style="font-weight:700">Why request an estimate?</div>
+            <ul class="small" style="margin:8px 0 0 16px">
+              <li>Street‑level comps</li>
+              <li>Timing &amp; prep guidance</li>
+              <li>No spam or obligation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="grid grid-2" style="align-items:center">
+        <div>
+          <h2>About Antonina D’Anna</h2>
+          <p class="muted" style="margin-top:10px">I live and work in Port Chester, helping neighbors buy and sell with confidence. Clients choose me for straightforward advice, responsive communication, and a marketing plan that actually gets executed.</p>
+          <div style="margin-top:10px">
+            <span class="pill">Clear comps & pricing guidance</span>
+            <span class="pill">Strategic staging & photography</span>
+            <span class="pill">Proactive weekly updates</span>
+          </div>
+          <div style="margin-top:10px">
+            <span class="pill">Port Chester</span>
+            <span class="pill">Rye Brook</span>
+            <span class="pill">White Plains</span>
+            <span class="pill">Westchester</span>
+          </div>
+        </div>
+        <div class="card" style="overflow:hidden">
+          <img class="listing-img" src="https://placehold.co/1000x750?text=Antonina+D%E2%80%99Anna" alt="Antonina D’Anna"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="grid contact-grid">
+        <div>
+          <h2>Let’s talk</h2>
+          <p class="muted">Tell me a bit about your plans and I’ll reply the same day.</p>
+          <div style="margin-top:10px" class="small">
+            📞 <a href="tel:19144097271">914.409.7271</a><br/>
+            ✉️ <a href="mailto:antonina.danna@cbrealty.com">antonina.danna@cbrealty.com</a><br/>
+            💙 <a href="#" target="_blank">Facebook</a> • <a href="#" target="_blank">Instagram</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="body">
+            <div style="font-weight:700;margin-bottom:8px">Quick message</div>
+            <form id="contact-form">
+              <div class="field"><input style="width:100%;border:none" type="text" placeholder="Full name" required/></div>
+              <div class="field"><input style="width:100%;border:none" type="email" placeholder="Email" required/></div>
+              <div class="field"><input style="width:100%;border:none" type="text" placeholder="Phone (optional)"/></div>
+              <div class="field"><textarea style="width:100%;border:none;min-height:96px" placeholder="How can I help?" required></textarea></div>
+              <button class="btn" type="submit">Send</button>
+              <div id="contact-msg" class="small ok hidden" style="margin-top:8px">Thanks! I’ll be in touch shortly.</div>
+              <div class="small" style="color:#64748b;margin-top:6px">By submitting, you consent to being contacted by phone, text, and email. Msg/data rates may apply.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="grid grid-2">
+        <div>
+          <div style="font-weight:700">Antonina Realty</div>
+          <div class="small">Coldwell Banker Realty — Rye Sound Shore</div>
+          <div class="small" style="margin-top:8px">📞 914.409.7271</div>
+          <div class="small">✉️ antonina.danna@cbrealty.com</div>
+          <div class="small" style="margin-top:10px">© <span id="yr"></span> Antonina D’Anna. All rights reserved.</div>
+        </div>
+        <div class="small" style="text-align:left">
+          <div>Equal Housing Opportunity. Each office is independently owned and operated.</div>
+          <div style="margin-top:4px">Not intended to solicit properties currently listed with another broker.</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    const vform = document.getElementById('value-form');
+    vform.addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('value-msg').classList.remove('hidden');
+      vform.reset();
+    });
+    const cform = document.getElementById('contact-form');
+    cform.addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('contact-msg').classList.remove('hidden');
+      cform.reset();
+    });
+  </script>
+</body>
+</html>
